@@ -14,3 +14,9 @@ This repository contains a modular, end-to-end simulation pipeline that models M
 ## Project Status
 
 Currently in development. Data and model weights excluded. Will be public once finalized.
+
+## License
+
+This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+You may remix, adapt, and build upon this work **non-commercially**, as long as you credit the original author and license your new creations under identical terms.
