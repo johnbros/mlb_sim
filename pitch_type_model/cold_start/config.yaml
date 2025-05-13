@@ -1,0 +1,30 @@
+# Name: Cold Start Model Configuration
+model_name: cold_start
+model_dir: cold_start/
+#Dataset information 
+train_years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+validate_shift: 1
+
+# Number of different embeddings needed
+num_players: 41908
+num_pitch_types: 21
+num_pitch_outcomes: 4
+num_zones: 14
+
+# Embedding Dimensions
+pitcher_embed_dim: 64
+batter_embed_dim: 24
+catcher_embed_dim: 16
+runner_embed_dim: 8
+zones_embed_dim: 6
+prior_pitch_type_embed_dim: 6
+prior_outcome_embed_dim: 4
+
+#Categorical Dimensions
+# Balls, Strikes, Outs, Score, Inning, Half, At Bat, Pitch number, Pitcher handedness, Batter handedness
+remaining_dims: 10
+
+# Model Hyperparameters
+hidden_size: 128
+num_layers: 1
+lr: 0.001

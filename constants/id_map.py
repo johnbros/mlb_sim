@@ -1,0 +1,25 @@
+pitch_id_to_name = {
+    0: "Curveball",
+    1: "Sinker",
+    2: "Changeup",
+    3: "Cutter",
+    4: "4-Seam Fastball",
+    5: "Sweeper",
+    6: "Slider",
+    7: "Unknown",
+    8: "Knuckle Curve",
+    9: "Splitter",
+    10: "Slurve",
+    11: "2-Seam Fastball",
+    12: "Slow Curve",
+    13: "Knuckle Ball",
+    14: "Fastball",
+    15: "Eephus",
+    16: "Forkball",
+    17: "Automatic Ball",
+    18: "Screwball",
+    19: "Pitchout",
+    20: "Intentional Ball",
+    }
+
+valid_pitch_ids = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18]

@@ -2,7 +2,7 @@
 
 This repository contains a modular, end-to-end simulation pipeline that models MLB pitch sequences, outcomes, and game progression using machine learning.
 
-## Modules
+## Modules(Planned implementation)
 
 - **pitch_type_model**: Predicts the next pitch type.
 - **pitch_characteristics_model**: Predicts pitch movement/speed given type.

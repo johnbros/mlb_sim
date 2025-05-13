@@ -9,15 +9,24 @@ __pycache__/
 venv/
 
 # Data and model weights
-data/
-models/
-*.pkl
-*.pt
-*.h5
-
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
+**.pkl
+**.pt
+**.h5
 
 # OS files
 .DS_Store
 Thumbs.db
+
+**out.txt
+**passwords.py
+**/venv/
+
+
+# Large data files / results 
+**valid_pitch_map.json
+
+# Intermediate Results
+**validation
+**loss
+**checkpoints
+
