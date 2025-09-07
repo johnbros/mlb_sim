@@ -1,1 +1,0 @@
-# Batted Ball Model
