@@ -1,1 +1,0 @@
-# At-Bat Outcome Aggregator
