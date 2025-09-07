@@ -1,8 +1,0 @@
-# Configuration for fielding_model
-model_name: fielding_model_baseline
-embedding_dim: 64
-batch_size: 128
-learning_rate: 0.001
-epochs: 50
-save_path: ./models/fielding_model_baseline.pt
-train_range: 2005-2014
