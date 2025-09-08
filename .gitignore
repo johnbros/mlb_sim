@@ -29,4 +29,14 @@ Thumbs.db
 **validation
 **loss
 **checkpoints
+**future_analysis*
+**full_season*
 
+**scripts*
+**warm_start*
+**embedding_analysis*
+**analysis*
+**tuning*
+**plots*
+
+**tar.zst

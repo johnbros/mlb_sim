@@ -98,7 +98,7 @@ pitch_type_id_map = {
     7696650: 11,
     713266: 12,
     47691: 13,
-    14118: 14,
+    14118: 4,
     36023: 15,
     43092: 16,
     153740: 17,
@@ -182,15 +182,17 @@ hand_map = {
 
 #Map player ids to embedding ids
 player_embedding_map = {}
+pitching_embedding_map = {}
 
 c1 = conn_pool.getconn()  
 with c1.cursor() as cur:
-    cur.execute("SELECT player_id, embedding_id FROM players")
+    cur.execute("SELECT player_id, embedding_id, pitching_id FROM players")
     rows = cur.fetchall()
     if rows:
         for row in rows:
-            player_id, embedding_id = row
+            player_id, embedding_id, pitching_id = row
             player_embedding_map[player_id] = embedding_id
+            pitching_embedding_map[player_id] = pitching_id
 
 conn_pool.putconn(c1) 
 
@@ -220,7 +222,7 @@ def populate_cold_start(game_id):
                 pitch_type = pitch_type_id_map.get(pitch_type_id, 0)
                 zone = map_zone(px, pz, sz_top, sz_bot)
 
-                pitcher_id = player_embedding_map.get(pitcher_id, -1)
+                pitcher_id = pitching_embedding_map.get(pitcher_id, -1)
                 batter_id = player_embedding_map.get(batter_id, -1)
                 catcher_id = player_embedding_map.get(catcher_id, -1)
                 runner_first = player_embedding_map.get(runner_first, -1)

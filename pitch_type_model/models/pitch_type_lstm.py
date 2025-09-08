@@ -13,6 +13,7 @@ class PitchTypeLSTM(nn.Module):
         hidden_size = config.get("hidden_size", 128)
         num_layers = config.get("num_layers", 1)
         dropout = config.get("lstm_dropout", 0.0)
+        self.temperature = config.get("temperature", 1.0)
 
         pitcher_embed_dim = config["pitcher_embed_dim"]
         batter_embed_dim = config["batter_embed_dim"]
@@ -95,7 +96,15 @@ class PitchTypeLSTM(nn.Module):
             mask = torch.zeros_like(logits, dtype=torch.bool)
             for i, valid_types in enumerate(batch["valid_pitch_types"]):
                 mask[i, valid_types] = True
-            logits[~mask] = float('-inf')
+
+            # Changing the masking strategy to try and solve the infinite loss issue
+            if batch["split"].item() == 0:
+                logits[~mask] -= self.config["mask_value"]
+            else:
+                epsilon = 1e-6
+                logits[~mask] = -1e9
+                logits[mask] = logits[mask] * (1 + epsilon)
+                logits = logits / self.temperature
             return F.log_softmax(logits, dim=1)
 
         return output 

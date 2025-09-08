@@ -52,7 +52,3 @@ Predicts the next pitch type based on a variety of factors
   - 4 games involved mid-game relocation. These represent <1,000 pitches. After evaluation I decided that it was acceptable to treat these as if they had remainined in the original location for simplicity. I may revisit this later but I believe the impact to be minimal so only if I have time.
 
   - For other suspended games, timestamp gaps were filled using the same interpolation strategy. In every case I validated, resumed timestamps aligned with the actual resume date and time.
-
-## Reaching out
-
-- If you have any question about methods, decisions, or data collection please do not hesitate to reach out I am happy to discuss any of my work or if you want to tell me about what you are working on I am also happy to hear about that.

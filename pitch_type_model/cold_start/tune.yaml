@@ -2,8 +2,9 @@
 model_name: cold_start
 model_dir: cold_start/
 #Dataset information 
-train_years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
-validate_shift: 1
+year: 2024
+start_week: 12
+end_week: 44
 
 # Number of different embeddings needed
 num_players: 41908
@@ -26,15 +27,11 @@ remaining_dims: 10
 
 # Model Hyperparameters
 hidden_size: 128
-num_layers: 3
+num_layers: 2
 lr: 0.001
-mask_value: 4
-lambda_entropy: 0.0125
-temperature: 1
+mask_value: 3.5
+lambda_entropy: 0.001
+temperature: 1.25
+batch_size: 1
 
-
-# Resume information
-resume_checkpoint: true
-resume_year: 2024  # The year to resume training on
-validate_only_year: 2023 # Year to just do validation on
-checkpoint_path: pitch_type_model/cold_start/checkpoints/cold_start_2023.pt
+weight_path: pitch_type_model/cold_start/checkpoints/cold_start_2023.pt
